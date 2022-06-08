@@ -1,25 +1,29 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/estaticos/navbar/Navbar";
-import Footer from "./components/estaticos/footer/Footer";
-import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
-import Home from "./paginas/home/Home";
-import Login from "./paginas/login/Login";
-import "./App.css";
-import ListaTema from "./components/temas/listatema/ListaTema";
-import ListaPostagem from "./components/postagens/listapostagem/ListaPostagem";
-import CadastroPost from "./components/postagens/cadastroPost/CadastroPost";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/estaticos/navbar/Navbar';
+import Footer from './components/estaticos/footer/Footer';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import Home from './paginas/home/Home';
+import Login from './paginas/login/Login';
+import './App.css';
+import ListaTema from './components/temas/listatema/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
+import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import {Provider} from 'react-redux';
+import store from './store/store';
 
-import DeletarPostagem from "./components/postagens/deletarPostagem/DeletarPostagem";
-import DeletarTema from "./components/temas/deletarTema/DeletarTema";
-import CadastroTema from "./components/temas/cadastroTema/CadastroTema";
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
-      <div style={{ minHeight: "100vh" }}>
+      <div style={{ minHeight: '100vh' }}>
         <Routes>
+
           <Route path="/" element={<Login />} />
 
           <Route path="/login" element={<Login />} />
@@ -43,10 +47,14 @@ function App() {
           <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
 
           <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+
         </Routes>
       </div>
       <Footer />
+
     </Router>
+    </Provider>
   );
 }
 

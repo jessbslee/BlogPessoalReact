@@ -1,8 +1,9 @@
 import React from 'react';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Box, Grid } from '@material-ui/core';
+import { GitHub } from '@material-ui/icons';
 
 function Footer() {
     return (
@@ -14,14 +15,14 @@ function Footer() {
                             <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                <FacebookIcon style={{ fontSize: 50, color: "white" }} />
+                            <a href="https://www.facebook.com/generationbrasil"  target="_blank" rel="noopener noreferrer">
+                                <FacebookIcon style={{ fontSize: 60, color: "white" }} />
                             </a>
-                            <a href="https://github.com/jessbslee" target="_blank">
-                                <GitHubIcon style={{ fontSize: 45, color: "white" }} />
+                            <a href="https://github.com/jessbslee"  target="_blank" rel="noopener noreferrer">
+                                <GitHub style={{ fontSize: 60, color: "white" }} />
                             </a>
-                            <a href="https://www.linkedin.com/in/j%C3%A9ssica-b-da-silva-66793048/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 50, color: "white" }} />
+                            <a href="https://www.linkedin.com/in/jéssica-b-da-silva-66793048/" target="_blank" rel="noopener noreferrer">
+                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
                             </a>
                         </Box>
                     </Box>
@@ -30,7 +31,7 @@ function Footer() {
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://brasil.generation.org">
+                            <a target="_blank" href="https://brasil.generation.org" rel="noopener noreferrer">
                                 <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
                             </a>
                         </Box>
