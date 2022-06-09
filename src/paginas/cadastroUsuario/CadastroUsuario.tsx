@@ -5,24 +5,26 @@ import { cadastroUsuario } from "../../services/Service";
 import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./CadastroUsuario.css";
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
   let navigate = useNavigate();
   const [confirmarSenha, setConfirmarSenha] = useState<String>("");
-  const [user, setUser] = useState<User>({
+  const [user, setUser] = useState<User>(
+    {
     id: 0,
     nome: "",
-    foto: "",
     usuario: "",
     senha: "",
+    foto: ""
   });
 
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome: "",
-    foto: "",
     usuario: "",
     senha: "",
+    foto: ""
   });
 
   useEffect(() => {
@@ -45,10 +47,10 @@ function CadastroUsuario() {
     e.preventDefault();
     if (confirmarSenha == user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Ottaku cadastrado com sucesso!");
+      alert("Ottaku ou dorameiro cadastrado com sucesso");
     } else {
       alert(
-        "Ottaku a senha deve conter no minimo 8 caracteres!"
+        "Ottaku ou dorameiro a senha deve ser a mesma e conter no minimo 8 caracteres."
       );
     }
   }
